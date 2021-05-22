@@ -7,7 +7,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   DateTime selectedDate = DateTime.now();
-  Future<void> _selectDate(BuildContext context) async {
+   Future<void> _selectDate(BuildContext context) async {
     final DateTime date = await showDatePicker(
         context: context,
         initialDate: selectedDate,
@@ -81,10 +81,11 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {
-                _selectDate(context);
-                _selectTime(context);
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              onTap: ()  async{
+                await _selectDate(context);
+                await _selectTime(context);
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Row(
                     children: [
                       Icon(
