@@ -4,7 +4,6 @@ class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<HomePage> {
   DateTime selectedDate = DateTime.now();
    Future<void> _selectDate(BuildContext context) async {
@@ -124,8 +123,6 @@ class _HomePageState extends State<HomePage> {
                   duration: Duration(seconds: 120),
                   backgroundColor: Color.fromRGBO(68, 98, 148, 1),
                     ));
-
-
               },
               child: Container(
                 padding: EdgeInsets.only(left: 35, top: 10),
